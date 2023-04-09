@@ -4,8 +4,8 @@ import { borrar, crear, editar, editarEstado } from './tareas.actions';
 
 
 export const estadoInicial: Tarea[] = [
-    new Tarea('Hacer test', 'Realizar una app', 'Leonard', '13:20', 'Inicio'),
-    new Tarea('Hacer test', 'Realizar una app', 'Leonard', '13:20', 'Inicio'),
+    new Tarea('Test de Consware', 'Realizar CRUD de tareas usando Redux', 'Leonard', 24, 'En proceso'),
+    new Tarea('Nuevo curso', 'Empezar curso de C#', 'Leonard', 22, 'Inicio'),
 ];
 
 const _tareasReducer = createReducer(estadoInicial,

@@ -1,5 +1,5 @@
 <div class="tarea animate__animated animate__fadeIn"
-    [ngStyle]="{ 'border': tarea.estado === 'Inicio' ? '2px solid aquamarine' : tarea.estado === 'En proceso' ? '2px solid blue' : '2px solid goldenrod'}"
+    [ngStyle]="{ 'background-color': tarea.estado === 'Inicio' ? '#a3e4d7aa' : tarea.estado === 'En proceso' ? '#7ac5cd' : '#ffb6c1aa'}"
 >
   <div class="tarea__no-edicion" *ngIf="!enEdicion">
     <div>
@@ -22,7 +22,7 @@
     <input class="texto" type="text" formControlName="nombre" [value]="tarea.nombre" placeholder="Nombre">
     <input class="texto" type="text" formControlName="accion" [value]="tarea.accion" placeholder="Acción">
     <input class="texto" type="text" formControlName="responsable" [value]="tarea.responsable" placeholder="Responsable">
-    <input class="texto" type="time" formControlName="duracion" [value]="tarea.duracion" placeholder="Duración">
+    <input class="texto" type="number" formControlName="duracion" [value]="tarea.duracion" placeholder="Duración">
   </form>
   <div class="tarea__botones">
     <button *ngIf="!enEdicion" (click)="cambiarEstado(tarea)" class="boton boton--estado"><mat-icon>sync</mat-icon></button>

@@ -4,10 +4,10 @@ export class Tarea {
   public nombre: string;
   public accion: string;
   public responsable: string;
-  public duracion: string;
+  public duracion: number;
   public estado: string;
 
-  constructor( nombre: string, accion: string, responsable: string, duracion: string, estado: string ) {
+  constructor( nombre: string, accion: string, responsable: string, duracion: number, estado: string ) {
 
     this.id = Math.random();
       this.nombre = nombre;

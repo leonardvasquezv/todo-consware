@@ -17,7 +17,7 @@ export class AgregarTareaComponent {
     nombre: [ '', [Validators.required] ],
     accion: [ '', [Validators.required] ],
     responsable: [ '', [Validators.required] ],
-    duracion: [ '', [Validators.required] ],
+    duracion: [ null, [Validators.required] ],
     estado: [ 'Seleccione', [Validators.required] ],
   });
 

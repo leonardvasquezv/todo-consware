@@ -21,7 +21,7 @@ export class ItemListaComponent {
     nombre: [ '', [Validators.required] ],
     accion: [ '', [Validators.required] ],
     responsable: [ '', [Validators.required] ],
-    duracion: [ '', [Validators.required] ],
+    duracion: [ null, [Validators.required] ],
     estado: [ '', [Validators.required] ],
   });
 

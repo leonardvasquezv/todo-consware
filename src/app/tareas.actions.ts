@@ -5,12 +5,12 @@ export const limpiarTodos = createAction('[TODO] Limpiar TODOS');
 
 export const crear = createAction(
     '[TODO] Crea Tarea',
-    props<{ nombre: string, accion: string, responsable: string, duracion: string, estado: string }>()
+    props<{ nombre: string, accion: string, responsable: string, duracion: number, estado: string }>()
 );
 
 export const editar = createAction(
     '[TODO] Editar Tarea',
-    props<{ id: number, nombre: string, accion: string, responsable: string, duracion: string, estado: string }>()
+    props<{ id: number, nombre: string, accion: string, responsable: string, duracion: number, estado: string }>()
 );
 
 export const editarEstado = createAction(
