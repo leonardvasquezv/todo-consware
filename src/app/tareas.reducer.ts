@@ -4,7 +4,15 @@ import { borrar, crear, editar, editarEstado } from './tareas.actions';
 
 
 export const estadoInicial: Tarea[] = [
-    new Tarea('Hacer test', 'Realizar una app', 'Leonard', '12 horas', 'En proceso')
+    new Tarea('Hacer test', 'Realizar una app', 'Leonard', '13:20', 'Inicio'),
+    new Tarea('Hacer test', 'Realizar una app', 'Leonard', '13:20', 'Inicio'),
+    new Tarea('Hacer test', 'Realizar una app', 'Leonard', '13:20', 'Inicio'),
+    new Tarea('Hacer test', 'Realizar una app', 'Leonard', '13:20', 'Inicio'),
+    new Tarea('Hacer test', 'Realizar una app', 'Leonard', '13:20', 'Inicio'),
+    new Tarea('Hacer test', 'Realizar una app', 'Leonard', '13:20', 'Inicio'),
+    new Tarea('Hacer test', 'Realizar una app', 'Leonard', '13:20', 'Inicio'),
+    new Tarea('Hacer test', 'Realizar una app', 'Leonard', '13:20', 'Inicio'),
+    new Tarea('Hacer test', 'Realizar una app', 'Leonard', '13:20', 'Inicio')
 ];
 
 const _tareasReducer = createReducer(estadoInicial,

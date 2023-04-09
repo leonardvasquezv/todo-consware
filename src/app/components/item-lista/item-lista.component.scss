@@ -9,18 +9,20 @@
   padding: 10px;
   border-radius: 5px;
 
-  .tarea_sinedicion {
+  &__no-edicion {
+    display: flex;
+    justify-content: space-between;
     width: 70%;
     padding: 5px;
   }
 
-  .tarea_edicion {
+  &__edicion {
     display: flex;
     flex-direction: column;
     width: 70%;
     padding: 5px;
 
-    .input {
+    .texto {
       background-color: transparent;
       color: white;
       border-top: none;
@@ -42,7 +44,6 @@
     align-items: center;
     gap: 5px;
     width: 30%;
-    background-color: red;
 
     .boton {
       width: 100px;
@@ -52,23 +53,30 @@
       border-radius: 5px;
     }
 
-    .boton_estado {
+    .boton--estado {
       background-color: transparent;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+      &:hover {
+        color: aqua;
+      }
     }
 
-    .boton_editar {
+    .boton--editar {
       background-color: goldenrod;
     }
 
-    .boton_guardar {
+    .boton--guardar {
       background-color: aqua;
     }
     
-    .boton_eliminar {
+    .boton--eliminar {
       background-color: darksalmon;
     }
 
-    .boton_cancelar {
+    .boton--cancelar {
       background-color: transparent;
     }
   }
