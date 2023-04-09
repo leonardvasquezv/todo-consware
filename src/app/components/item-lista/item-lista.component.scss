@@ -1,0 +1,75 @@
+.tarea {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  background-color: transparent;
+  border: 1px solid aquamarine;
+  color: #fff;
+  height: auto;
+  padding: 10px;
+  border-radius: 5px;
+
+  .tarea_sinedicion {
+    width: 70%;
+    padding: 5px;
+  }
+
+  .tarea_edicion {
+    display: flex;
+    flex-direction: column;
+    width: 70%;
+    padding: 5px;
+
+    .input {
+      background-color: transparent;
+      color: white;
+      border-top: none;
+      border-left: none;
+      border-right: none;
+      border-bottom-color: aquamarine;
+      padding: 10px;
+
+      &:focus {
+        outline: none;
+        border-bottom-color: blueviolet;
+      }
+    }
+  }
+
+  .tarea__botones {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+    width: 30%;
+    background-color: red;
+
+    .boton {
+      width: 100px;
+      height: 50px;
+      border: none;
+      color: white;
+      border-radius: 5px;
+    }
+
+    .boton_estado {
+      background-color: transparent;
+    }
+
+    .boton_editar {
+      background-color: goldenrod;
+    }
+
+    .boton_guardar {
+      background-color: aqua;
+    }
+    
+    .boton_eliminar {
+      background-color: darksalmon;
+    }
+
+    .boton_cancelar {
+      background-color: transparent;
+    }
+  }
+}

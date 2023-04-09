@@ -1,0 +1,58 @@
+<div class="contenedor">
+
+  <h1>Agregar Tarea</h1>
+
+  <form autocomplete="off" [formGroup]="miFormulario">
+
+    <input
+      type="text"
+      class="input"
+      placeholder="Nombre"
+      formControlName="nombre"
+    >
+    <input 
+      type="text"
+      class="input"
+      placeholder="Acción"
+      formControlName="accion"
+    >
+    <input
+      type="text"
+      class="input"
+      placeholder="Responsable"
+      formControlName="responsable"
+    >
+    <input 
+      type="time"
+      class="input"
+      placeholder="Duración"
+      formControlName="duracion"
+    >
+    <select
+      formControlName="estado"
+    >
+      <option class="input" value="Seleccione">Seleccione</option>
+      <option value="Inicio">Inicio</option>
+      <option value="En proceso">En proceso</option>
+      <option value="Terminada">Terminada</option>
+    </select>
+
+    <div class="botones_contenedor">
+      <button 
+        class="boton boton_agregar"
+        type="button"
+        (click)="agregar()"
+      >
+        Agregar
+      </button>
+      <button 
+        class="boton boton_cancelar"
+        routerLink="/lista"
+      >
+        Volver
+      </button>
+    </div>
+    
+  </form>
+
+</div>

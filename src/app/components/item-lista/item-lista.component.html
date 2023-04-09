@@ -1,0 +1,22 @@
+<div class="tarea">
+  <div class="tarea_sinedicion" *ngIf="!enEdicion">
+    <span>{{ tarea.nombre }}</span>
+    <span>{{ tarea.accion}}</span>
+    <span>{{ tarea.responsable }}</span>
+    <span>{{ tarea.duracion }}</span>
+    <span>{{ tarea.estado }}</span>
+  </div>
+  <form class="tarea_edicion" *ngIf="enEdicion" autocomplete="off" [formGroup]="miFormulario">
+    <input class="input" type="text" formControlName="nombre" [value]="tarea.nombre" placeholder="Nombre">
+    <input class="input" type="text" formControlName="accion" [value]="tarea.accion" placeholder="Acción">
+    <input class="input" type="text" formControlName="responsable" [value]="tarea.responsable" placeholder="Responsable">
+    <input class="input" type="time" formControlName="duracion" [value]="tarea.duracion" placeholder="Duración">
+  </form>
+  <div class="tarea__botones">
+    <button *ngIf="!enEdicion" (click)="cambiarEstado(tarea)" class="boton boton_estado"><mat-icon>sync</mat-icon></button>
+    <button *ngIf="!enEdicion" (click)="modoEdicion()" class="boton boton_editar">Editar</button>
+    <button *ngIf="!enEdicion" (click)="eliminar(tarea.id)" class="boton boton_eliminar">Eliminar</button>
+    <button *ngIf="enEdicion" (click)="editar(tarea)" class="boton boton_guardar">Guardar</button>
+    <button *ngIf="enEdicion" (click)="cancelar()" class="boton boton_cancelar">Cancelar</button>
+  </div>
+</div>

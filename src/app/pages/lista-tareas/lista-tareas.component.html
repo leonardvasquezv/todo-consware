@@ -1,0 +1,19 @@
+<div class="contenedor">
+
+  <h1>Listado Tareas</h1>
+  
+  <div class="listado">
+    <app-item-lista 
+      *ngFor="let tarea of tareas"
+      [tarea]="tarea"
+    >
+    </app-item-lista>
+  </div>
+
+  <button
+    routerLink="/agregar"
+  >
+    Agregar nueva tarea
+  </button>
+
+</div>
