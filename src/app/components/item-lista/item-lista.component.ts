@@ -4,6 +4,7 @@ import { Tarea } from 'src/app/models/tareas.model';
 import { AppState } from 'src/app/app.reducer';
 import * as actions from '../../tareas.actions';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { ToastrService } from 'ngx-toastr';
 
 @Component({
   selector: 'app-item-lista',
@@ -24,7 +25,7 @@ export class ItemListaComponent {
     estado: [ '', [Validators.required] ],
   });
 
-  constructor( private store:Store<AppState>, private fb: FormBuilder ) {
+  constructor( private store:Store<AppState>, private fb: FormBuilder, private toastr: ToastrService ) {
 
   }
 
@@ -41,6 +42,7 @@ export class ItemListaComponent {
 
   eliminar(id: number) {
     this.store.dispatch( actions.borrar({id: id}) );
+    this.toastr.success(`La tarea "${this.tarea.nombre}" ha sido eliminada.`, '¡Bien!', {toastClass: 'toast-custom'});
   }
 
   cambiarEstado(value: Tarea) {
@@ -56,7 +58,12 @@ export class ItemListaComponent {
   }
 
   editar(tarea: Tarea) {
+    if (!this.miFormulario.valid) {
+      this.toastr.show('Por favor, ingresa todos los campos.', '¡Error!', {toastClass: 'toast-custom-error'});
+      return
+    }
     this.store.dispatch( actions.editar({id: this.tarea.id, ...this.miFormulario.value}) );
+    this.toastr.success(`La tarea "${this.tarea.nombre}" ha sido actualizada.`, '¡Bien!', {toastClass: 'toast-custom'});
   }
 
   cancelar() {

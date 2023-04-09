@@ -7,7 +7,6 @@ import { RouterModule } from '@angular/router';
 import { ReactiveFormsModule } from '@angular/forms';
 
 
-
 @NgModule({
   declarations: [
     ListaTareasComponent,
@@ -17,7 +16,7 @@ import { ReactiveFormsModule } from '@angular/forms';
     CommonModule,
     ComponentsModule,
     RouterModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
   ],
   exports: [
     ListaTareasComponent,

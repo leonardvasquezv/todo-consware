@@ -1,12 +1,22 @@
-<div class="tarea"
+<div class="tarea animate__animated animate__fadeIn"
     [ngStyle]="{ 'border': tarea.estado === 'Inicio' ? '2px solid aquamarine' : tarea.estado === 'En proceso' ? '2px solid blue' : '2px solid goldenrod'}"
 >
   <div class="tarea__no-edicion" *ngIf="!enEdicion">
-    <span>{{ tarea.nombre }}</span>
-    <span>{{ tarea.accion}}</span>
-    <span>{{ tarea.responsable }}</span>
-    <span>{{ tarea.duracion }}</span>
-    <span>{{ tarea.estado }}</span>
+    <div>
+      <span class="nombre">Nombre: </span><span class="descripcion">{{ tarea.nombre }}</span>
+    </div>
+    <div>
+      <span class="nombre">Acción: </span><span class="descripcion">{{ tarea.accion }}</span>
+    </div>
+    <div>
+      <span class="nombre">Responsable: </span><span class="descripcion">{{ tarea.responsable }}</span>
+    </div>
+    <div>
+      <span class="nombre">Duración: </span><span class="descripcion">{{ tarea.duracion }}</span>
+    </div>
+    <div>
+      <span class="nombre">Estado: </span><span class="descripcion">{{ tarea.estado }}</span>
+    </div>
   </div>
   <form class="tarea__edicion" *ngIf="enEdicion" autocomplete="off" [formGroup]="miFormulario">
     <input class="texto" type="text" formControlName="nombre" [value]="tarea.nombre" placeholder="Nombre">
