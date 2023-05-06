@@ -1,20 +1,20 @@
 export class Tarea {
 
-  public id: number;
+  public idTarea: number;
   public nombre: string;
   public accion: string;
   public responsable: string;
   public duracion: number;
-  public estado: string;
+  public estado: number;
 
-  constructor( nombre: string, accion: string, responsable: string, duracion: number, estado: string ) {
+  constructor( id: number, nombre: string, accion: string, responsable: string, duracion: number, estado: number ) {
 
-    this.id = Math.random();
-      this.nombre = nombre;
-      this.accion = accion;
-      this.responsable = responsable;
-      this.duracion = duracion;
-      this.estado = estado;
+    this.idTarea = id;
+    this.nombre = nombre;
+    this.accion = accion;
+    this.responsable = responsable;
+    this.duracion = duracion;
+    this.estado = estado;
   }
 
 }

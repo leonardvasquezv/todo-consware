@@ -5,6 +5,8 @@ import { AppState } from 'src/app/app.reducer';
 import * as actions from '../../tareas.actions';
 import { Router } from '@angular/router';
 import { ToastrService } from 'ngx-toastr';
+import { TareasService } from 'src/app/services/tareas.service';
+import { Estados } from 'src/app/enums/Estados';
 
 @Component({
   selector: 'app-agregar-tarea',
@@ -21,7 +23,7 @@ export class AgregarTareaComponent {
     estado: [ 'Seleccione', [Validators.required] ],
   });
 
-  constructor( private fb: FormBuilder, private store: Store<AppState>, private router:Router, private toastr: ToastrService){
+  constructor( private fb: FormBuilder, private tareasService: TareasService, private store: Store<AppState>, private router:Router, private toastr: ToastrService){
   }
   
   
@@ -30,10 +32,15 @@ export class AgregarTareaComponent {
       this.toastr.show('Por favor, ingresa todos los campos.', '¡Error!', {toastClass: 'toast-custom-error'});
       return
     }
-    this.store.dispatch( actions.crear(this.miFormulario.value) )
-    this.miFormulario.reset();
-    this.toastr.success('Se agregó la nueva tarea.', '¡Genial!', {toastClass: 'toast-custom'});
-    this.router.navigate(['/lista'])
+
+    // this.tareasService.agregarTarea({...this.miFormulario.value, estado: Estados[this.miFormulario.controls["estado"].value]}).subscribe(id => {
+    //   console.log(id)
+    // })
+
+    this.store.dispatch( actions.crear({...this.miFormulario.value, estado: Estados[this.miFormulario.controls["estado"].value]}) )
+    // this.miFormulario.reset();
+    // this.toastr.success('Se agregó la nueva tarea.', '¡Genial!', {toastClass: 'toast-custom'});
+    // this.router.navigate(['/lista'])
   }
 
 }

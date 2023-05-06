@@ -40,31 +40,31 @@ export class ItemListaComponent {
     })
   }
 
-  eliminar(id: number) {
-    this.store.dispatch( actions.borrar({id: id}) );
-    this.toastr.success(`La tarea "${this.tarea.nombre}" ha sido eliminada.`, '¡Bien!', {toastClass: 'toast-custom'});
-  }
+  // eliminar(id: number) {
+  //   this.store.dispatch( actions.borrar({id: id}) );
+  //   this.toastr.success(`La tarea "${this.tarea.nombre}" ha sido eliminada.`, '¡Bien!', {toastClass: 'toast-custom'});
+  // }
 
-  cambiarEstado(value: Tarea) {
-    if (value.estado === 'Inicio') {
-      this.store.dispatch( actions.editarEstado({id: this.tarea.id, estado: 'En proceso'}) );
-    }
-    if (value.estado === 'En proceso') {
-      this.store.dispatch( actions.editarEstado({id: this.tarea.id, estado: 'Terminada'}) );
-    }
-    if (value.estado === 'Terminada') {
-      this.store.dispatch( actions.editarEstado({id: this.tarea.id, estado: 'Inicio'}) );
-    }
-  }
+  // cambiarEstado(value: Tarea) {
+  //   if (value.estado === 'Inicio') {
+  //     this.store.dispatch( actions.editarEstado({id: this.tarea.id, estado: 'En proceso'}) );
+  //   }
+  //   if (value.estado === 'En proceso') {
+  //     this.store.dispatch( actions.editarEstado({id: this.tarea.id, estado: 'Terminada'}) );
+  //   }
+  //   if (value.estado === 'Terminada') {
+  //     this.store.dispatch( actions.editarEstado({id: this.tarea.id, estado: 'Inicio'}) );
+  //   }
+  // }
 
-  editar(tarea: Tarea) {
-    if (!this.miFormulario.valid) {
-      this.toastr.show('Por favor, ingresa todos los campos.', '¡Error!', {toastClass: 'toast-custom-error'});
-      return
-    }
-    this.store.dispatch( actions.editar({id: this.tarea.id, ...this.miFormulario.value}) );
-    this.toastr.success(`La tarea "${this.tarea.nombre}" ha sido actualizada.`, '¡Bien!', {toastClass: 'toast-custom'});
-  }
+  // editar(tarea: Tarea) {
+  //   if (!this.miFormulario.valid) {
+  //     this.toastr.show('Por favor, ingresa todos los campos.', '¡Error!', {toastClass: 'toast-custom-error'});
+  //     return
+  //   }
+  //   this.store.dispatch( actions.editar({id: this.tarea.id, ...this.miFormulario.value}) );
+  //   this.toastr.success(`La tarea "${this.tarea.nombre}" ha sido actualizada.`, '¡Bien!', {toastClass: 'toast-custom'});
+  // }
 
   cancelar() {
     this.enEdicion = false;

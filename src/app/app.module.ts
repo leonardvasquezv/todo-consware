@@ -12,6 +12,9 @@ import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 
 import { ToastrModule } from 'ngx-toastr';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { HttpClientModule } from '@angular/common/http';
+import { EffectsModule } from '@ngrx/effects';
+import { ToDoEffects } from './effects/TodoEffect';
 
 @NgModule({
   declarations: [
@@ -19,9 +22,11 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
   ],
   imports: [
     BrowserModule,
+    HttpClientModule,
     AppRoutingModule,
     PagesModule,
     StoreModule.forRoot( appReducers ),
+    EffectsModule.forRoot([ToDoEffects]),
     StoreDevtoolsModule.instrument({
       maxAge: 25, // Retains last 25 states
     }),

@@ -1,6 +1,6 @@
 <div class="tarea animate__animated animate__fadeIn"
-    [ngStyle]="{ 'background-color': tarea.estado === 'Inicio' ? '#a3e4d7aa' : tarea.estado === 'En proceso' ? '#7ac5cd' : '#ffb6c1aa'}"
 >
+<!-- [ngStyle]="{ 'background-color': tarea.estado === 'Inicio' ? '#a3e4d7aa' : tarea.estado === 'En proceso' ? '#7ac5cd' : '#ffb6c1aa'}" -->
   <div class="tarea__no-edicion" *ngIf="!enEdicion">
     <div>
       <span class="nombre">Nombre: </span><span class="descripcion">{{ tarea.nombre }}</span>
@@ -25,10 +25,10 @@
     <input class="texto" type="number" formControlName="duracion" [value]="tarea.duracion" placeholder="Duración">
   </form>
   <div class="tarea__botones">
-    <button *ngIf="!enEdicion" (click)="cambiarEstado(tarea)" class="boton boton--estado"><mat-icon>sync</mat-icon></button>
+    <!-- <button *ngIf="!enEdicion" (click)="cambiarEstado(tarea)" class="boton boton--estado"><mat-icon>sync</mat-icon></button> -->
     <button *ngIf="!enEdicion" (click)="modoEdicion()" class="boton boton--editar">Editar</button>
-    <button *ngIf="!enEdicion" (click)="eliminar(tarea.id)" class="boton boton--eliminar">Eliminar</button>
-    <button *ngIf="enEdicion" (click)="editar(tarea)" class="boton boton--guardar">Guardar</button>
+    <!-- <button *ngIf="!enEdicion" (click)="eliminar(tarea.id)" class="boton boton--eliminar">Eliminar</button>
+    <button *ngIf="enEdicion" (click)="editar(tarea)" class="boton boton--guardar">Guardar</button> -->
     <button *ngIf="enEdicion" (click)="cancelar()" class="boton boton--cancelar">Cancelar</button>
   </div>
 </div>
